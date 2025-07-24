@@ -6,7 +6,7 @@
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 00:17:28 by asoria            #+#    #+#             */
-/*   Updated: 2025/07/23 21:29:24 by asoria           ###   ########.fr       */
+/*   Updated: 2025/07/24 00:13:21 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,14 @@
 
 typedef struct s_stack
 {
-	long			nbr;
+	long			value;
 	long			index;
 	struct s_stack	*next;
 	struct s_stack	*prev;
 }	t_stack;
 
-void	ft_print_stack(t_stack stack);
-
 int	ft_error(int error);
-
+void	ft_print_stack(t_stack *stack);
 t_stack	ft_parse_args(int argc, char **argv);
+
 #endif

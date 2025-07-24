@@ -6,13 +6,13 @@
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 00:24:14 by asoria            #+#    #+#             */
-/*   Updated: 2025/07/23 21:57:19 by asoria           ###   ########.fr       */
+/*   Updated: 2025/07/23 23:21:49 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_print_stack(t_stack)
+void	ft_print_stack(t_stack *stack)
 {
-	
+	(void)stack;	
 }

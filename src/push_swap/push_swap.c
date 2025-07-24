@@ -6,7 +6,7 @@
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 00:12:31 by asoria            #+#    #+#             */
-/*   Updated: 2025/07/23 02:34:30 by asoria           ###   ########.fr       */
+/*   Updated: 2025/07/25 00:08:08 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int	main(int argc, char **argv)
 {
 	t_stack *a;
 	a = ft_parse_args(argc, argv);
-	ft_print_stack(a);
-
+	ft_print_stack(a);	
 	return (0);
 }
