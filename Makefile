@@ -12,7 +12,7 @@
 
 NAME		:= push_swap
 CC		:= cc
-CFLAGS		:= -Wall -Wextra -Werror -Iincludes -Ilibft #-O3 -march=native
+CFLAGS		:= -Wall -Wextra -Werror -Iincludes -Ilibft -g3 #-O3 -march=native
 
 SRC_DIR		:= src/push_swap
 SRC_FILES	:= $(wildcard $(SRC_DIR)/*.c)
@@ -22,14 +22,11 @@ OBJ_FILES	:= $(SRC_FILES:.c=.o)
 LIBFT_DIR	:= libft
 LIBFT		:= $(LIBFT_DIR)/libft.a
 
-PRINTF_DIR	:= $(LIBFT_DIR)/ft_printf
-PRINTF		:= $(PRINTF_DIR)/libftprintf.a
-
 # Targets
 all: $(NAME)
 
-$(NAME): $(OBJ_FILES) $(LIBFT) $(PRINTF)
-	$(CC) $(CFLAGS) $(OBJ_FILES) $(LIBFT) $(PRINTF) -o $(NAME)
+$(NAME): $(OBJ_FILES) $(LIBFT)
+	$(CC) $(CFLAGS) $(OBJ_FILES) $(LIBFT) -o $(NAME)
 
 $(LIBFT):
 	$(MAKE) -C $(LIBFT_DIR)

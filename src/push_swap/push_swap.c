@@ -14,8 +14,14 @@
 
 int	main(int argc, char **argv)
 {
-	t_stack *a;
+	t_stack a;
+	t_stack	b;
+
+	if (argc < 2)
+		return (ft_error(1));
+	{
+	ft_init_stack(&a);
+	ft_init_stack_empty(&b);
 	a = ft_parse_args(argc, argv);
-	ft_print_stack(a);	
 	return (0);
 }
