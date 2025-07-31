@@ -6,7 +6,7 @@
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 00:17:28 by asoria            #+#    #+#             */
-/*   Updated: 2025/07/24 00:13:21 by asoria           ###   ########.fr       */
+/*   Updated: 2025/07/31 04:29:44 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,9 @@ void    ft_print_stack(t_node *node);
 /* Initialization*/
 int     ft_init_node(t_node *node);
 int     ft_init_stack(t_stack *stack, char **argv);
-int     ft_init_stack_empty(t_stack *stack);
-t_node  *ft_parse_args(int argc, char **argv);
+void	ft_init_stack_empty(t_stack *stack);
 
-void	ft_create_node(int value);
+t_node	*ft_create_node(int value);
 void	ft_append_node(t_stack *stack, t_node *new);
 
 #endif

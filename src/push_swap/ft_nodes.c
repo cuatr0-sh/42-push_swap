@@ -6,13 +6,13 @@
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 02:35:50 by asoria            #+#    #+#             */
-/*   Updated: 2025/07/28 02:37:30 by asoria           ###   ########.fr       */
+/*   Updated: 2025/07/31 00:50:55 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	append_node(t_stack *stack, t_node *new)
+void	ft_append_node(t_stack *stack, t_node *new)
 {
 	if (!stack->head)
 	{
@@ -32,7 +32,7 @@ void	append_node(t_stack *stack, t_node *new)
 	stack->size++;
 }
 
-t_node	*create_node(int value)
+t_node	*ft_create_node(int value)
 {
 	t_node	*new;
 
