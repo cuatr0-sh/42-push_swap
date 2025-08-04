@@ -6,13 +6,13 @@
 #    By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/23 00:45:08 by asoria            #+#    #+#              #
-#    Updated: 2025/07/24 21:18:45 by asoria           ###   ########.fr        #
+#    Updated: 2025/08/03 19:12:29 by asoria           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		:= push_swap
 CC		:= cc
-CFLAGS		:= -Wall -Wextra -Werror -Iincludes -Ilibft -g3 #-O3 -march=native
+CFLAGS		:= -Wall -Wextra -Werror -Iincludes -Ilibft -g3 -O3 -march=native -flto -pipe
 
 SRC_DIR		:= src/push_swap
 SRC_FILES	:= $(wildcard $(SRC_DIR)/*.c)
