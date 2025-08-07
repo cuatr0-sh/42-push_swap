@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/07 23:51:39 by asoria            #+#    #+#             */
+/*   Updated: 2025/08/08 00:55:48 by asoria           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/push_swap.h"
 
-t_stack *create_node(int value)
+t_stack *ft_create_node(int value)
 {
 	t_stack *node;
 
@@ -16,7 +28,7 @@ t_stack *create_node(int value)
 	return (node);
 }
 
-void	append_stack(t_stack **stack, t_stack *new)
+void	ft_append_stack(t_stack **stack, t_stack *new)
 {
 	t_stack *temp;
 
@@ -33,7 +45,7 @@ void	append_stack(t_stack **stack, t_stack *new)
 	}
 }
 
-int	get_stack_size(t_stack *stack)
+int	ft_get_stack_size(t_stack *stack)
 {
 	int	size;
 	
@@ -46,7 +58,7 @@ int	get_stack_size(t_stack *stack)
 	return (size);
 }
 
-void	free_stack(t_stack **stack)
+void	ft_free_stack(t_stack **stack)
 {
 	t_stack *temp;
 	
@@ -59,4 +71,13 @@ void	free_stack(t_stack **stack)
 		*stack = temp;
 	}
 	*stack = NULL;
+}
+
+void	ft_print_stack(t_stack *stack)
+{
+	while (stack)
+	{
+		ft_printf("%d\n", stack->value);
+		stack = stack->next;
+	}
 }
