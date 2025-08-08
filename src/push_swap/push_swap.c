@@ -6,7 +6,7 @@
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 08:23:19 by asoria            #+#    #+#             */
-/*   Updated: 2025/08/08 00:56:40 by asoria           ###   ########.fr       */
+/*   Updated: 2025/08/08 01:25:45 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,13 @@
 
 int	main(int argc, char **argv)
 {
-	int	i;
+	int		i;
 	t_stack	*node;
-	t_stack *a;
+	t_stack	*a;
 
-	a = NULL;
+	a= NULL;
 	if (argc < 2)
 		return (1);
-	ft_parse_args();
 	i = 1;
 	while (i < argc)
 	{

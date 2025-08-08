@@ -6,19 +6,19 @@
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 23:51:39 by asoria            #+#    #+#             */
-/*   Updated: 2025/08/08 00:55:48 by asoria           ###   ########.fr       */
+/*   Updated: 2025/08/08 01:25:07 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-t_stack *ft_create_node(int value)
+t_stack	*ft_create_node(int value)
 {
-	t_stack *node;
+	t_stack	*node;
 
 	node = malloc(sizeof(t_stack));
 	if (!node)
-		return NULL;
+		return (NULL);
 	node->value = value;
 	node->index = -1;
 	node->pos = -1;
@@ -30,7 +30,7 @@ t_stack *ft_create_node(int value)
 
 void	ft_append_stack(t_stack **stack, t_stack *new)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	if (!stack || !new)
 		return ;
@@ -48,7 +48,7 @@ void	ft_append_stack(t_stack **stack, t_stack *new)
 int	ft_get_stack_size(t_stack *stack)
 {
 	int	size;
-	
+
 	size = 0;
 	while (stack)
 	{
@@ -60,8 +60,8 @@ int	ft_get_stack_size(t_stack *stack)
 
 void	ft_free_stack(t_stack **stack)
 {
-	t_stack *temp;
-	
+	t_stack	*temp;
+
 	if (!stack || !*stack)
 		return ;
 	while (*stack)
