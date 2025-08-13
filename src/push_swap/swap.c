@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   swap.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/14 00:54:00 by asoria            #+#    #+#             */
+/*   Updated: 2025/08/14 00:54:26 by asoria           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/push_swap.h"
 
 void	do_swap(t_stack **stack)
 {
 	t_stack	*first;
-	t_stack *second;
+	t_stack	*second;
 
 	if (!stack || !*stack || !(*stack)->next)
 	{
