@@ -34,5 +34,15 @@ void	ft_append_stack(t_stack **stack, t_stack *new);
 int	ft_get_stack_size(t_stack *stack);
 void	ft_free_stack(t_stack **stack);
 void	ft_print_stack(t_stack *stack);
+int	ft_algorithm(t_stack *a, t_stack *b);
+int	ft_parse_args(int argc, char **argv, t_stack **a);
+
+void	do_swap(t_stack **stack);
+int	do_sa(t_stack **stack);
+int	do_sb(t_stack **stack);
+int	do_ss(t_stack **a, t_stack **b);
+int	do_pa(t_stack **a, t_stack **b);
+int	do_pb(t_stack **a, t_stack **b);
+
 
 #endif

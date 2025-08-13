@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_algorithm.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/04 08:23:19 by asoria            #+#    #+#             */
-/*   Updated: 2025/08/08 01:25:45 by asoria           ###   ########.fr       */
+/*   Created: 2025/08/13 14:15:28 by asoria            #+#    #+#             */
+/*   Updated: 2025/08/13 14:15:31 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	main(int argc, char **argv)
+int	ft_algorithm(t_stack *a, t_stack *b)
 {
-	t_stack	*a;
-	t_stack	*b;
+	ft_printf("STACK A:\n");
+	ft_print_stack(a);
+	ft_printf("STACK B:\n");
+	ft_print_stack(b);
 
-	a = NULL;
-	b = NULL;
-	ft_parse_args(argc, argv, &a);
-	ft_algorithm(a, b);
-	ft_free_stack(&a);
+	do_pb(&a, &b);
+	do_pa(&a, &b);
+
+	ft_printf("\nSTACK A:\n");
+	ft_print_stack(a);
+	ft_printf("STACK B:\n");
+	ft_print_stack(b);
 	return (0);
 }
