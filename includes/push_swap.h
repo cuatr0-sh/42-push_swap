@@ -46,5 +46,6 @@ int	do_pb(t_stack **a, t_stack **b);
 int	ft_rotate(t_stack **stack);
 int	do_ra(t_stack **a);
 int	do_rb(t_stack **b);
-int	do_rr(t_stack **a, t_stack **b);
+int	do_rrr(t_stack **a, t_stack **b);
+
 #endif
