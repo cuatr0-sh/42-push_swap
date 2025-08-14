@@ -18,8 +18,11 @@ int	ft_algorithm(t_stack *a, t_stack *b)
 	ft_print_stack(a);
 	ft_printf("STACK B:\n");
 	ft_print_stack(b);
+	
 	do_pb(&a, &b);
-	do_pa(&a, &b);
+	do_pb(&a, &b);
+	do_pb(&a, &b);
+
 	ft_printf("\nSTACK A:\n");
 	ft_print_stack(a);
 	ft_printf("STACK B:\n");
