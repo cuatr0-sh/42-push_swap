@@ -31,8 +31,8 @@ $(NAME): $(OBJ_FILES) $(LIBFT)
 $(LIBFT):
 	$(MAKE) -C $(LIBFT_DIR)
 
-$(PRINTF):
-	$(MAKE) -C $(PRINTF_DIR)
+$(FT_PRINTF):
+	$(MAKE) -C $(FT_PRINTF_DIR)
 
 clean:
 	rm -f $(OBJ_FILES)

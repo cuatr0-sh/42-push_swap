@@ -28,17 +28,17 @@ void	do_swap(t_stack **stack)
 	*stack = second;
 }
 
-int	do_sa(t_stack **stack)
+int	do_sa(t_stack **a)
 {
 	ft_printf("sa\n");
-	do_swap(stack);
+	do_swap(a);
 	return (1);
 }
 
-int	do_sb(t_stack **stack)
+int	do_sb(t_stack **b)
 {
 	ft_printf("sb\n");
-	do_swap(stack);
+	do_swap(b);
 	return (1);
 }
 

@@ -29,6 +29,7 @@ typedef struct s_stack
         struct s_stack   *next;
 }       t_stack;
 
+// PARSING, MODIFYING AND FREEING
 t_stack *ft_create_node(int value);
 void	ft_append_stack(t_stack **stack, t_stack *new);
 int	ft_get_stack_size(t_stack *stack);
@@ -36,16 +37,23 @@ void	ft_free_stack(t_stack **stack);
 void	ft_print_stack(t_stack *stack);
 int	ft_algorithm(t_stack *a, t_stack *b);
 int	ft_parse_args(int argc, char **argv, t_stack **a);
-
+// SWAP
 void	do_swap(t_stack **stack);
-int	do_sa(t_stack **stack);
-int	do_sb(t_stack **stack);
+int	do_sa(t_stack **a);
+int	do_sb(t_stack **b);
 int	do_ss(t_stack **a, t_stack **b);
+// PUSH
 int	do_pa(t_stack **a, t_stack **b);
 int	do_pb(t_stack **a, t_stack **b);
-int	ft_rotate(t_stack **stack);
+
+// ROTATE
+void	ft_rotate(t_stack **stack);
 int	do_ra(t_stack **a);
 int	do_rb(t_stack **b);
-int	do_rrr(t_stack **a, t_stack **b);
+int	do_rr(t_stack **a, t_stack **b);
+// REVERSE ROTATE
+void	ft_reverse_rotate();
+int	do_rra();
+int	do_rrb();
 
 #endif
