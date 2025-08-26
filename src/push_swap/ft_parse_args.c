@@ -12,25 +12,48 @@
 
 #include "../../includes/push_swap.h"
 
+static int	is_valid_number(char *str)
+{
+	int	i;
+	
+	i = 0;
+	if (!str || !*str)
+		return (0);
+	if (str[i] == '+' || str[i] + '-')
+		i++;
+	if (!str[i])
+		return (0);
+	while (str[i])
+	{
+		if (str[i] < '0' || str[i] > '9')
+			return (0);
+		i++;
+	}
+	return (1);
+
+}
+
 int	ft_parse_args(int argc, char **argv, t_stack **a)
 {
 	int		i;
+	long	val;
 	t_stack	*node;
 
 	if (argc < 2)
-	{
-		ft_printf("Error: couldn't parse args");
 		return (-1);
-	}
 	i = 1;
 	while (i < argc)
 	{
-		node = ft_create_node(ft_atoi(argv[i]));
-		if (!node)
+		val = ft_atoi(argv[i]);
+		node = ft_create_node((int)val);
+		if (!node || (val < -2147483648 || val > 2147483647))
+			return (-1);
+		t_stack *tmp = *a;
+		while (tmp)
 		{
-			ft_free_stack(a);
-			ft_printf("Error: ft_parse_args: malloc failed");
-			return (-2);
+			if (tmp->value == (int)val)
+				return (-1);
+			tmp = tmp->next;
 		}
 		ft_append_stack(a, node);
 		i++;

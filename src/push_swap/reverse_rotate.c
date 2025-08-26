@@ -33,6 +33,8 @@ void	ft_reverse_rotate(t_stack **stack)
 
 int	do_rra(t_stack **a)
 {
+	if (!a || !*a || !(*a)->next)
+		return (0);
 	ft_printf("rra\n");
 	ft_reverse_rotate(a);
 	return (1);
@@ -40,6 +42,8 @@ int	do_rra(t_stack **a)
 
 int	do_rrb(t_stack **b)
 {
+	if (!b || !*b || !(*b)->next)
+		return (0);
 	ft_printf("rrb\n");
 	ft_reverse_rotate(b);
 	return (1);
@@ -47,6 +51,8 @@ int	do_rrb(t_stack **b)
 
 int	do_rrr(t_stack **a, t_stack **b)
 {
+	if (!a || !*a || !(*a)->next || !b || !*b || !(*b)->next)
+		return (0);
 	ft_printf("rrr\n");
 	ft_reverse_rotate(a);
 	ft_reverse_rotate(b);

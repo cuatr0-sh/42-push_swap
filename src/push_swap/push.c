@@ -18,7 +18,7 @@ int	do_pa(t_stack **a, t_stack **b)
 
 	ft_printf("pa\n");
 	if (!b || !(*b))
-		return (-1);
+		return (0);
 	tmp = *b;
 	*b = (*b)->next;
 	tmp->next = *a;
@@ -30,12 +30,12 @@ int	do_pb(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp;
 
-	ft_printf("pb\n");
 	if (!a || !(*a))
-		return (-1);
+		return (0);
 	tmp = *a;
 	*a = (*a)->next;
 	tmp->next = *b;
 	*b = tmp;
+	ft_printf("pb\n");
 	return (1);
 }

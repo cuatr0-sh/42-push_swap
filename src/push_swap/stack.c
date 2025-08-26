@@ -25,6 +25,7 @@ t_stack	*ft_create_node(int value)
 	node->target_pos = -1;
 	node->cost_a = 0;
 	node->cost_b = 0;
+	node->next = NULL;
 	return (node);
 }
 
@@ -71,4 +72,26 @@ void	ft_free_stack(t_stack **stack)
 		*stack = temp;
 	}
 	*stack = NULL;
+}
+
+void	ft_index_stack(t_stack *a)
+{
+    t_stack *cur;
+    t_stack *cmp;
+    int index;
+
+    cur = a;
+    while (cur)
+    {
+        index = 0;
+        cmp = a;
+        while (cmp)
+        {
+            if (cmp->value < cur->value)
+                index++;
+            cmp = cmp->next;
+        }
+        cur->index = index;
+        cur = cur->next;
+    }
 }

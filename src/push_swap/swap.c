@@ -19,7 +19,7 @@ void	do_swap(t_stack **stack)
 
 	if (!stack || !*stack || !(*stack)->next)
 	{
-		ft_printf("Error: do_swap: the stack was empty or invalid.\n");
+		return ;
 	}
 	first = *stack;
 	second = first->next;
@@ -30,6 +30,8 @@ void	do_swap(t_stack **stack)
 
 int	do_sa(t_stack **a)
 {
+	if (!a || !*a || !(*a)->next)
+		return (0);
 	ft_printf("sa\n");
 	do_swap(a);
 	return (1);
@@ -37,6 +39,8 @@ int	do_sa(t_stack **a)
 
 int	do_sb(t_stack **b)
 {
+	if (!b || !*b || !(*b)->next)
+		return (0);
 	ft_printf("sb\n");
 	do_swap(b);
 	return (1);
@@ -44,6 +48,8 @@ int	do_sb(t_stack **b)
 
 int	do_ss(t_stack **a, t_stack **b)
 {
+	if (!a || !*a || !(*a)->next || !b || !*b || !(*b)->next)
+		return (0);
 	ft_printf("ss\n");
 	do_swap(a);
 	do_swap(b);
