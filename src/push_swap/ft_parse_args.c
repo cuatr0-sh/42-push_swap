@@ -19,7 +19,7 @@ static int	is_valid_number(char *str)
 	i = 0;
 	if (!str || !*str)
 		return (0);
-	if (str[i] == '+' || str[i] + '-')
+	if (str[i] == '+' || str[i] == '-')
 		i++;
 	if (!str[i])
 		return (0);
@@ -33,6 +33,17 @@ static int	is_valid_number(char *str)
 
 }
 
+static int	has_duplicate(t_stack *stack, int value)
+{
+	while (stack)
+	{
+		if (stack->value == value)
+			return (1);
+		stack = stack->next;
+	}
+	return (0);
+}
+
 int	ft_parse_args(int argc, char **argv, t_stack **a)
 {
 	int		i;
@@ -44,17 +55,16 @@ int	ft_parse_args(int argc, char **argv, t_stack **a)
 	i = 1;
 	while (i < argc)
 	{
-		val = ft_atoi(argv[i]);
-		node = ft_create_node((int)val);
-		if (!node || (val < -2147483648 || val > 2147483647))
+		if (!is_valid_number(argv[i]))
 			return (-1);
-		t_stack *tmp = *a;
-		while (tmp)
-		{
-			if (tmp->value == (int)val)
-				return (-1);
-			tmp = tmp->next;
-		}
+		val = ft_atoi(argv[i]);
+		if (val < -2147483648 || val > 2147483647)
+			return (-1);
+		if (has_duplicate(*a, (int)val))
+			return (-1);
+		node = ft_create_node((int)val);
+		if (!node)
+			return (-1);
 		ft_append_stack(a, node);
 		i++;
 	}

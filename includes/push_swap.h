@@ -71,4 +71,14 @@ void	sort_radix(t_stack **a, t_stack **b);
 void	sort_chunks(t_stack **a, t_stack **b);
 int	get_max_bits(t_stack *a);
 
+// COST ANALYSIS FUNCTIONS
+void	calculate_positions(t_stack *stack);
+void	assign_target_positions(t_stack **a, t_stack **b);
+void	calculate_costs(t_stack **a, t_stack **b);
+
+// MOVE EXECUTION FUNCTIONS
+void	execute_cheapest_move(t_stack **a, t_stack **b);
+
+// GREEDY SORT FUNCTION
+void	sort_greedy(t_stack **a, t_stack **b);
 #endif
