@@ -76,7 +76,7 @@ int	ft_algorithm(t_stack **a, t_stack **b)
 	else if (size == 3)
 		sort_three(a);
 	else if (size <= 100)
-		sort_chunks(a, b);
+		sort_radix(a, b);
 	else
 		sort_radix(a, b);
 	return (0);
