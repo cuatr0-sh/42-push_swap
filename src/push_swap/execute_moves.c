@@ -6,7 +6,7 @@
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 00:00:00 by asoria            #+#    #+#             */
-/*   Updated: 2025/08/28 00:00:00 by asoria           ###   ########.fr       */
+/*   Updated: 2025/10/15 17:31:48 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,11 @@ void	execute_cheapest_move(t_stack **a, t_stack **b)
 	cheapest = INT_MAX;
 	while (tmp)
 	{
-		if (absolute_value(tmp->cost_a) + absolute_value(tmp->cost_b) < cheapest)
+		if (absolute_value(tmp->cost_a)
+			+ absolute_value(tmp->cost_b) < cheapest)
 		{
-			cheapest = absolute_value(tmp->cost_a) + absolute_value(tmp->cost_b);
+			cheapest = absolute_value(tmp->cost_a)
+				+ absolute_value(tmp->cost_b);
 			cost_a = tmp->cost_a;
 			cost_b = tmp->cost_b;
 		}

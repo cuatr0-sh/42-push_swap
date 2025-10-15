@@ -6,7 +6,7 @@
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 00:53:24 by asoria            #+#    #+#             */
-/*   Updated: 2025/08/14 00:53:31 by asoria           ###   ########.fr       */
+/*   Updated: 2025/10/15 17:31:00 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	is_valid_number(char *str)
 {
 	int	i;
-	
+
 	i = 0;
 	if (!str || !*str)
 		return (0);
@@ -30,7 +30,6 @@ static int	is_valid_number(char *str)
 		i++;
 	}
 	return (1);
-
 }
 
 static int	has_duplicate(t_stack *stack, int value)

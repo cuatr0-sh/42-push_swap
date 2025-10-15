@@ -6,7 +6,7 @@
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 23:51:39 by asoria            #+#    #+#             */
-/*   Updated: 2025/08/08 01:25:07 by asoria           ###   ########.fr       */
+/*   Updated: 2025/10/15 17:34:10 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,22 +76,22 @@ void	ft_free_stack(t_stack **stack)
 
 void	ft_index_stack(t_stack *a)
 {
-    t_stack *cur;
-    t_stack *cmp;
-    int index;
+	int		index;
+	t_stack	*cur;
+	t_stack	*cmp;
 
-    cur = a;
-    while (cur)
-    {
-        index = 0;
-        cmp = a;
-        while (cmp)
-        {
-            if (cmp->value < cur->value)
-                index++;
-            cmp = cmp->next;
-        }
-        cur->index = index;
-        cur = cur->next;
-    }
+	cur = a;
+	while (cur)
+	{
+		index = 0;
+		cmp = a;
+		while (cmp)
+		{
+			if (cmp->value < cur->value)
+				index++;
+			cmp = cmp->next;
+		}
+		cur->index = index;
+		cur = cur->next;
+	}
 }
