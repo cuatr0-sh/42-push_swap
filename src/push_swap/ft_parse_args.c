@@ -1,24 +1,12 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_parse_args.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/14 00:53:24 by asoria            #+#    #+#             */
-/*   Updated: 2025/10/15 17:31:00 by asoria           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../../includes/push_swap.h"
 
 static int	is_valid_number(char *str)
 {
 	int	i;
 
-	i = 0;
 	if (!str || !*str)
 		return (0);
+	i = 0;
 	if (str[i] == '+' || str[i] == '-')
 		i++;
 	if (!str[i])
@@ -32,7 +20,7 @@ static int	is_valid_number(char *str)
 	return (1);
 }
 
-static int	has_duplicate(t_stack *stack, int value)
+int	ft_has_duplicate(t_stack *stack, int value)
 {
 	while (stack)
 	{
@@ -43,29 +31,66 @@ static int	has_duplicate(t_stack *stack, int value)
 	return (0);
 }
 
-int	ft_parse_args(int argc, char **argv, t_stack **a)
+static int	add_number(t_stack **a, char *num)
 {
-	int		i;
 	long	val;
 	t_stack	*node;
+
+	if (!is_valid_number(num))
+	{
+		write(2, "Error\n", 6);
+		return (-1);
+	}
+	val = ft_atol(num);
+	if (val < -2147483648 || val > 2147483647)
+	{
+		write(2, "Error\n", 6);
+		return (-1);
+	}
+	if (ft_has_duplicate(*a, (int)val))
+	{
+		write(2, "Error\n", 6);
+		return (-1);
+	}
+	node = ft_create_node((int)val);
+	if (!node)
+	{
+		write(2, "Error\n", 6);
+		return (-1);
+	}
+	ft_append_stack(a, node);
+	return (0);
+}
+
+static int	parse_string(char *arg, t_stack **a)
+{
+	char	**split;
+	int		i;
+
+	split = ft_split(arg, ' ');
+	if (!split || !split[0])
+		return (ft_free_split(split), -1);
+	i = 0;
+	while (split[i])
+	{
+		if (add_number(a, split[i++]) != 0)
+			return (ft_free_split(split), -1);
+	}
+	ft_free_split(split);
+	return (0);
+}
+
+int	ft_parse_args(int argc, char **argv, t_stack **a)
+{
+	int	i;
 
 	if (argc < 2)
 		return (-1);
 	i = 1;
 	while (i < argc)
 	{
-		if (!is_valid_number(argv[i]))
+		if (parse_string(argv[i++], a) != 0)
 			return (-1);
-		val = ft_atoi(argv[i]);
-		if (val < -2147483648 || val > 2147483647)
-			return (-1);
-		if (has_duplicate(*a, (int)val))
-			return (-1);
-		node = ft_create_node((int)val);
-		if (!node)
-			return (-1);
-		ft_append_stack(a, node);
-		i++;
 	}
 	return (0);
 }

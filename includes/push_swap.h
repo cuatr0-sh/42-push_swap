@@ -6,7 +6,7 @@
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 00:17:28 by asoria            #+#    #+#             */
-/*   Updated: 2025/08/08 01:13:19 by asoria           ###   ########.fr       */
+/*   Updated: 2025/10/15 18:08:44 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ void	ft_append_stack(t_stack **stack, t_stack *new);
 void	ft_free_stack(t_stack **stack);
 void	ft_print_stack(t_stack *stack);
 t_stack	*ft_create_node(int value);
+void	ft_free_split(char **split);
+int	ft_has_duplicate(t_stack *stack, int value);
 
 //		SWAP
 int		do_sa(t_stack **a);

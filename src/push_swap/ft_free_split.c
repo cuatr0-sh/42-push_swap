@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_free_split.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/04 08:23:19 by asoria            #+#    #+#             */
-/*   Updated: 2025/10/15 18:07:51 by asoria           ###   ########.fr       */
+/*   Created: 2025/10/15 17:59:18 by asoria            #+#    #+#             */
+/*   Updated: 2025/10/15 18:05:35 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	main(int argc, char **argv)
+void	ft_free_split(char **split)
 {
-	t_stack	*a;
-	t_stack	*b;
+	int	i;
 
-	a = NULL;
-	b = NULL;
-	if (ft_parse_args(argc, argv, &a) != 0)
-	{
-		write(2, "Error\n", 6);
-		ft_free_stack(&a);
-		return (1);
-	}
-	ft_index_stack(a);
-	ft_algorithm(&a, &b);
-	ft_free_stack(&a);
-	ft_free_stack(&b);
-	return (0);
+	if (!split)
+		return ;
+	i = 0;
+	while (split[i])
+		free(split[i++]);
+	free(split);
 }
