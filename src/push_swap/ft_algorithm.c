@@ -6,7 +6,7 @@
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 14:15:28 by asoria            #+#    #+#             */
-/*   Updated: 2025/10/15 17:30:11 by asoria           ###   ########.fr       */
+/*   Updated: 2025/10/15 19:05:47 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,10 @@ int	ft_algorithm(t_stack **a, t_stack **b)
 		sort_two(a);
 	else if (size == 3)
 		sort_three(a);
+	else if (size <= 5)
+		sort_five(a, b);
 	else if (size <= 100)
-		sort_radix(a, b);
+		sort_chunks(a, b);
 	else
 		sort_radix(a, b);
 	return (0);

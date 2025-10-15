@@ -6,7 +6,7 @@
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 00:17:28 by asoria            #+#    #+#             */
-/*   Updated: 2025/10/15 18:08:44 by asoria           ###   ########.fr       */
+/*   Updated: 2025/10/15 18:51:47 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,9 @@ int		get_max_bits(t_stack *a);
 
 void	sort_two(t_stack **a);
 void	sort_three(t_stack **b);
-void	sort_radix(t_stack **a, t_stack **b);
+void	sort_five(t_stack **a, t_stack **b);
 void	sort_chunks(t_stack **a, t_stack **b);
+void	sort_radix(t_stack **a, t_stack **b);
 
 //		COST ANALYSIS FUNCTIONS
 void	calculate_positions(t_stack *stack);
