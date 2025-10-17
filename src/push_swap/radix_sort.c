@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_radix.c                                       :+:      :+:    :+:   */
+/*   radix_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 17:30:24 by asoria            #+#    #+#             */
-/*   Updated: 2025/10/15 17:30:30 by asoria           ###   ########.fr       */
+/*   Updated: 2025/10/17 08:04:44 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void	radix_pass(t_stack **a, t_stack **b, int i, int size)
 		do_pa(a, b);
 }
 
-void	sort_radix(t_stack **a, t_stack **b)
+void	radix_sort(t_stack **a, t_stack **b)
 {
 	int	size;
 	int	max_bits;
