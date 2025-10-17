@@ -6,13 +6,13 @@
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 14:15:28 by asoria            #+#    #+#             */
-/*   Updated: 2025/10/15 19:05:47 by asoria           ###   ########.fr       */
+/*   Updated: 2025/10/17 07:50:32 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	sort_two(t_stack **a)
+static void	sort_two(t_stack **a)
 {
 	if ((*a)->value > (*a)->next->value)
 		do_sa(a);
@@ -45,6 +45,7 @@ void	sort_three(t_stack **a)
 	}
 }
 
+/* From radix sort */
 int	get_max_bits(t_stack *a)
 {
 	int	max;

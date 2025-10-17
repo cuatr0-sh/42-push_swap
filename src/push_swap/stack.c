@@ -6,7 +6,7 @@
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 23:51:39 by asoria            #+#    #+#             */
-/*   Updated: 2025/10/15 17:34:10 by asoria           ###   ########.fr       */
+/*   Updated: 2025/10/17 07:43:12 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,6 @@ t_stack	*ft_create_node(int value)
 		return (NULL);
 	node->value = value;
 	node->index = -1;
-	node->pos = -1;
-	node->target_pos = -1;
-	node->cost_a = 0;
-	node->cost_b = 0;
 	node->next = NULL;
 	return (node);
 }
