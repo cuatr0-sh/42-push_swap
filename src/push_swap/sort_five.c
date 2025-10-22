@@ -1,11 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_five.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/22 20:32:32 by asoria            #+#    #+#             */
+/*   Updated: 2025/10/22 20:32:33 by asoria           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/push_swap.h"
 
 static int	find_min_index(t_stack *stack)
 {
-	int		min = stack->value;
-	int		i = 0;
-	int		min_i = 0;
+	int		min;
+	int		i;
+	int		min_i;
 
+	min = stack->value;
+	i = 0;
+	min_i = 0;
 	while (stack)
 	{
 		if (stack->value < min)
@@ -21,9 +36,10 @@ static int	find_min_index(t_stack *stack)
 
 void	sort_five(t_stack **a, t_stack **b)
 {
-int	size = ft_get_stack_size(*a);
+	int	size;
 	int	min_index;
 
+	size = ft_get_stack_size(*a);
 	while (size > 3)
 	{
 		min_index = find_min_index(*a);
@@ -44,9 +60,7 @@ int	size = ft_get_stack_size(*a);
 		}
 		size--;
 	}
-
 	sort_three(a);
-
 	while (*b)
 		do_pa(a, b);
 }

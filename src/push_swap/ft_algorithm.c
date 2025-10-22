@@ -24,9 +24,9 @@ void	sort_three(t_stack **a)
 	int	s;
 	int	t;
 
-	f = (*a)->value;
-	s = (*a)->next->value;
-	t = (*a)->next->next->value;
+	f = (*a)->index;
+	s = (*a)->next->index;
+	t = (*a)->next->next->index;
 	if (f > s && f < t)
 		do_sa(a);
 	else if (f > s && s > t)

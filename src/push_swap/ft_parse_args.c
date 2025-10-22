@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_parse_args.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/22 20:28:21 by asoria            #+#    #+#             */
+/*   Updated: 2025/10/22 20:29:43 by asoria           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/push_swap.h"
 
 static int	is_valid_number(char *str)
@@ -36,13 +48,8 @@ static int	add_number(t_stack **a, char *num)
 	long	val;
 	t_stack	*node;
 
-	if (!is_valid_number(num))
-	{
-		write(2, "Error\n", 6);
-		return (-1);
-	}
 	val = ft_atol(num);
-	if (val < -2147483648 || val > 2147483647)
+	if (!is_valid_number(num) || val < -2147483648 || val > 2147483647)
 	{
 		write(2, "Error\n", 6);
 		return (-1);

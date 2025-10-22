@@ -5,80 +5,69 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/17 07:45:58 by asoria            #+#    #+#             */
-/*   Updated: 2025/10/17 08:10:33 by asoria           ###   ########.fr       */
+/*   Created: 2025/10/22 20:25:29 by asoria            #+#    #+#             */
+/*   Updated: 2025/10/22 20:32:57 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-static int	find_max_index(t_stack *stack)
+static int	get_chunk_size(int size)
 {
-	int	max;
+	int	chunk;
 
-	max = stack->index;
-	while (stack)
-	{
-		if (stack->index > max)
-			max = stack->index;
-		stack = stack->next;
-	}
-	return (max);
-}
-
-static void	move_max_to_top(t_stack **b, int max_index)
-{
-	int	pos;
-	int	size;
-	t_stack	*tmp;
-
-	pos = 0;
-	tmp = *b;
-	while (tmp && tmp->index != max_index)
-	{
-		pos++;
-		tmp = tmp->next;
-	}
-	size = ft_get_stack_size(*b);
-	if (pos <= size / 2)
-		while ((*b)->index != max_index)
-			do_rb(b);
+	if (size <= 20)
+		chunk = 5;
 	else
-		while ((*b)->index != max_index)
-			do_rrb(b);
+		chunk = 20;
+	return (chunk);
 }
 
-static void push_chunks(t_stack **a, t_stack **b, int chunk_size)
+static void	push_chunk(t_stack **a, t_stack **b, int min, int max)
 {
-	int	start;
-	int	end;
+	int	scan;
+	int	val;
 
-	start = 0;
-	end = chunk_size;
-	while (*a)
+	scan = ft_get_stack_size(*a);
+	while (scan > 0)
 	{
-		if ((*a)->index >= start && (*a)->index < end)
-		{
+		val = (*a)->index;
+		if (val >= min && val <= max)
 			do_pb(a, b);
-			start++;
-			if (*b && (*b)->index < start - (chunk_size / 2))
-				do_rb(b);
-		}
 		else
 			do_ra(a);
-		if (start >= end)
-			end += chunk_size;
+		scan--;
+	}
+}
+
+static void	push_chunks(t_stack **a, t_stack **b, int size)
+{
+	int	chunk;
+	int	i;
+	int	min;
+	int	max;
+
+	chunk = get_chunk_size(size);
+	i = 0;
+	while (i < size)
+	{
+		min = i;
+		max = i + chunk - 1;
+		if (max >= size)
+			max = size - 1;
+		push_chunk(a, b, min, max);
+		i = max + 1;
 	}
 }
 
 static void	push_back_sorted(t_stack **a, t_stack **b)
 {
-	int	max_index;
+	int	pos;
 
 	while (*b)
 	{
-		max_index = find_max_index(*b);
-		move_max_to_top(b, max_index);
+		pos = find_max_index(*b);
+		move_max_to_top(b, pos);
 		do_pa(a, b);
 	}
 }
@@ -86,13 +75,8 @@ static void	push_back_sorted(t_stack **a, t_stack **b)
 void	chunk_sort(t_stack **a, t_stack **b)
 {
 	int	size;
-	int	chunk_size;
 
 	size = ft_get_stack_size(*a);
-	if (size <= 100)
-		chunk_size = 20;
-	else
-		chunk_size = 45;
-	push_chunks(a, b, chunk_size);
+	push_chunks(a, b, size);
 	push_back_sorted(a, b);
 }

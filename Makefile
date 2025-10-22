@@ -12,7 +12,7 @@
 
 NAME		:= push_swap
 CC		:= cc
-CFLAGS		:= -Wall -Wextra -Werror -Iincludes -Ilibft # -g3 -O3 -march=native -flto -pipe
+CFLAGS		:= -Wall -Wextra -Werror -Iincludes -Ilibft -g3 # -O3 -march=native -flto -pipe
 
 SRC_DIR		:= src/push_swap
 SRC_FILES	:= $(wildcard $(SRC_DIR)/*.c)

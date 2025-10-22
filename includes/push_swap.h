@@ -6,7 +6,7 @@
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 00:17:28 by asoria            #+#    #+#             */
-/*   Updated: 2025/10/17 08:04:22 by asoria           ###   ########.fr       */
+/*   Updated: 2025/10/22 20:26:30 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,14 @@ void	ft_reverse_rotate(t_stack **stack);
 int		ps_is_sorted(t_stack *a);
 int		ft_algorithm(t_stack **a, t_stack **b);
 int		get_max_bits(t_stack *a);
+int		get_max_index(t_stack *b);
+int		find_max_index(t_stack *b);
+void	move_max_to_top(t_stack **b, int pos);
 
 void	sort_three(t_stack **b);
 void	sort_five(t_stack **a, t_stack **b);
 void	chunk_sort(t_stack **a, t_stack **b);
+void	insertion_sort(t_stack **a, t_stack **b);
 void	radix_sort(t_stack **a, t_stack **b);
 
 #endif
