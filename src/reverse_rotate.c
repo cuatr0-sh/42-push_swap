@@ -1,57 +1,60 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/14 00:54:00 by asoria            #+#    #+#             */
-/*   Updated: 2025/08/14 00:54:26 by asoria           ###   ########.fr       */
+/*   Created: 2025/08/14 02:28:34 by asoria            #+#    #+#             */
+/*   Updated: 2025/08/14 02:28:36 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "../includes/push_swap.h"
 
-void	do_swap(t_stack **stack)
+void	ft_reverse_rotate(t_stack **stack)
 {
-	t_stack	*first;
-	t_stack	*second;
+	t_stack	*prev;
+	t_stack	*last;
 
-	if (!stack || !*stack || !(*stack)->next)
-	{
+	if (!stack || !(*stack) || !(*stack)->next)
 		return ;
+	prev = NULL;
+	last = *stack;
+	while (last->next)
+	{
+		prev = last;
+		last = last->next;
 	}
-	first = *stack;
-	second = first->next;
-	first->next = second->next;
-	second->next = first;
-	*stack = second;
+	prev->next = NULL;
+	last->next = *stack;
+	*stack = last;
 }
 
-int	do_sa(t_stack **a)
+int	do_rra(t_stack **a)
 {
 	if (!a || !*a || !(*a)->next)
 		return (0);
-	ft_printf("sa\n");
-	do_swap(a);
+	ft_printf("rra\n");
+	ft_reverse_rotate(a);
 	return (1);
 }
 
-int	do_sb(t_stack **b)
+int	do_rrb(t_stack **b)
 {
 	if (!b || !*b || !(*b)->next)
 		return (0);
-	ft_printf("sb\n");
-	do_swap(b);
+	ft_printf("rrb\n");
+	ft_reverse_rotate(b);
 	return (1);
 }
 
-int	do_ss(t_stack **a, t_stack **b)
+int	do_rrr(t_stack **a, t_stack **b)
 {
 	if (!a || !*a || !(*a)->next || !b || !*b || !(*b)->next)
 		return (0);
-	ft_printf("ss\n");
-	do_swap(a);
-	do_swap(b);
+	ft_printf("rrr\n");
+	ft_reverse_rotate(a);
+	ft_reverse_rotate(b);
 	return (1);
 }
