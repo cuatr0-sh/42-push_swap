@@ -6,7 +6,7 @@
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 08:23:19 by asoria            #+#    #+#             */
-/*   Updated: 2025/10/15 18:07:51 by asoria           ###   ########.fr       */
+/*   Updated: 2025/11/06 22:24:13 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int	main(int argc, char **argv)
 	b = NULL;
 	if (ft_parse_args(argc, argv, &a) != 0)
 	{
-		write(2, "Error\n", 6);
 		ft_free_stack(&a);
 		return (1);
 	}

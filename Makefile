@@ -6,7 +6,7 @@
 #    By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/23 00:45:08 by asoria            #+#    #+#              #
-#    Updated: 2025/11/03 20:16:15 by asoria           ###   ########.fr        #
+#    Updated: 2025/11/06 22:08:35 by asoria           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ_FILES) $(LIBFT)
 	$(CC) $(CFLAGS) $(OBJ_FILES) $(LIBFT) -o $(NAME)
-	@echo "\033[32m[✔] Built $(NAME)\033[0m"
+	@echo -e "\033[32m[✔] Built $(NAME)\033[0m"
 
 $(LIBFT):
 	$(MAKE) -C $(LIBFT_DIR)
